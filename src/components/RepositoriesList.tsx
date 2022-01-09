@@ -1,5 +1,6 @@
 import { useState } from 'react';
 // import { useSelector } from 'react-redux';
+// import { RootState } from '../state';
 import { useTypeSelector } from '../hooks/useTypeSelector';
 import { useActions } from '../hooks/useActions';
 
@@ -8,6 +9,9 @@ import { useActions } from '../hooks/useActions';
 const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState<string>('');
   const { searchRepositories } = useActions();
+  // const { data, error, loading } = useSelector(
+  //   (state: RootState) => state.repositories
+  // );
   const { data, error, loading } = useTypeSelector(
     (state) => state.repositories
   );
